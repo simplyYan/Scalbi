@@ -54,18 +54,3 @@ class Scalbi {
   }
 }
 
-// Exemplo de uso:
-const sca = new Scalbi('http://localhost:8080/api/endpoint');
-
-sca.set({
-  home: 'index.html',
-  log: 'login.html',
-  dash: 'board.html',
-});
-
-var dados = {
-  campo: 'Valor de exemplo', // Seus dados aqui
-};
-
-sca.send('POST', dados);
-
