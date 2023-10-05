@@ -7,6 +7,11 @@ To install Scalbi, you can use 'go get', here's how:
 ```bash
 go get https://github.com/simplyYan/Scalbi
 ```
+### Scalbi's JavaScript API
+To use the full power of Scalbi, you need to add its API to your HTML:
+```
+https://cdn.jsdelivr.net/gh/simplyYan/Scalbi@main/javascript.api/scalbi.js
+```
 
 ## 📖 Documentation
 To access the documentation, you can use the ScalbiWiki, [by clicking here](https://github.com/simplyYan/Scalbi/wiki/Docs) or by going to:
