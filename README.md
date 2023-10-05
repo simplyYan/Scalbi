@@ -9,7 +9,10 @@ go get https://github.com/simplyYan/Scalbi
 ```
 
 ## 📖 Documentation
-To access the documentation, you can use the ScalbiWiki, by clicking here or by going to:
+To access the documentation, you can use the ScalbiWiki, [by clicking here](https://github.com/simplyYan/Scalbi/wiki/Docs) or by going to:
+```
+https://github.com/simplyYan/Scalbi/wiki/Docs
+```
 
 ## 🎯 Main features
 
