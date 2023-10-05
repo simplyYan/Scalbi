@@ -23,7 +23,7 @@ class Scalbi {
 
   send(method, data) {
     if (!this.serverURL) {
-      console.error('URL do servidor não definido.');
+      console.error('URL do servidor não definido. Não é possível enviar solicitações Ajax.');
       return;
     }
 
@@ -53,4 +53,3 @@ class Scalbi {
     }, 1400); // Verifica a cada 1,4 segundos
   }
 }
-
