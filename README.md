@@ -11,15 +11,15 @@ To access the documentation, you can use the ScalbiWiki, by clicking here or by 
 
 ## 🎯 Main features
 
-- Get values:** With Scalbi you can get data from forms more easily and quickly.
+- **Get values:** With Scalbi you can get data from forms more easily and quickly.
 
-- Flexible:** Scalbi can be used with any framework, such as Echo, Fiber, Neo, Gin, and the standard Go framework.
+- **Flexible:** Scalbi can be used with any framework, such as Echo, Fiber, Neo, Gin, and the standard Go framework.
 
-- Fast:** Faster, lighter and more effective than other methods.
+- **Fast:** Faster, lighter and more effective than other methods.
 
-- Declarative rendering:** Scalbi has extremely easy and effective declarative rendering.
+- **Declarative rendering:** Scalbi has extremely easy and effective declarative rendering.
 
-- More secure:** Your page's source code is less visible and vulnerable.
+- **More secure:** Your page's source code is less visible and vulnerable.
 
 ## ⚡ How CTMFS works
 CTMFS takes all the files from your server (which you must indicate) and creates a single network that can load your entire site faster in just one directory/slug.
