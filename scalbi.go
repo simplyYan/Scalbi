@@ -3,8 +3,51 @@ package scalbi
 import (
 	"encoding/json"
 	"fmt"
+	"net"
 	"net/http"
+	"time"
 )
+
+type Scaltrack struct {
+	url    URL
+	net    Net
+	wifi   Wifi
+	memory Memory
+}
+
+type URL struct{}
+
+type Net struct{}
+
+type Wifi struct{}
+
+type Memory struct{}
+
+func New() *Scaltrack {
+	return &Scaltrack{}
+}
+
+func (u URL) Time(url string) time.Duration {
+	start := time.Now()
+	http.Get(url)
+	return time.Since(start)
+}
+
+func (n Net) Ping() string {
+	_, err := net.Dial("tcp", "google.com:80")
+	if err != nil {
+		return "un"
+	}
+	return "av"
+}
+
+func (u URL) Status(url string) string {
+	resp, err := http.Get(url)
+	if err != nil || resp.StatusCode != 200 {
+		return "un"
+	}
+	return "av"
+}
 
 // Função para renderizar o HTML com base nos dados passados
 func scalbi(w http.ResponseWriter, data map[string]string) {
