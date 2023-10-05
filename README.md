@@ -1,5 +1,5 @@
 # Scalbi
-
+![Scalbi by Wesley Yan Soares Brehmer](https://raw.githubusercontent.com/simplyYan/Scalbi/main/scalbi.logo.header.png)
 Scalbi is a library dedicated to monitoring and improving server performance. Scalbi uses CTMFS (Connection tree for multiple files simultaneously) technology, developed exclusively for Scalbi.
 
 ## 📦 How to install
