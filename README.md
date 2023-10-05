@@ -1,25 +1,27 @@
-A Scalbi é uma biblioteca dedicada ao monitoramento e melhoria de performance do servidor. A Scalbi usa a tecnologia CTMFS (Connection tree for multiple files simultaneously), desenvolvida exclusivamente para a Scalbi.
+# Scalbi
 
-## 📦 Como instalar
-Para instalar a Scalbi, você pode usar 'go get', veja como fazer:
+Scalbi is a library dedicated to monitoring and improving server performance. Scalbi uses CTMFS (Connection tree for multiple files simultaneously) technology, developed exclusively for Scalbi.
+
+## 📦 How to install
+To install Scalbi, you can use 'go get', here's how:
 go get git
 
-## 📖 Documentação
-Para acessar a documentação, você pode usar a ScalbiWiki, clicando aqui ou acessando:
+## 📖 Documentation
+To access the documentation, you can use the ScalbiWiki, by clicking here or by going to:
 
-## 🎯 Características Principais
+## 🎯 Main features
 
-- **Receber valores:** Com a Scalbi você pode obter dados de formulários de forma mais fácil e rápida.
+- Get values:** With Scalbi you can get data from forms more easily and quickly.
 
-- **Flexível:** A Scalbi pode ser usada com qualquer framework, como Echo, Fiber, Neo, Gin, e a padrão do Go.
+- Flexible:** Scalbi can be used with any framework, such as Echo, Fiber, Neo, Gin, and the standard Go framework.
 
-- **Rápida:** Mais rápida, leve e eficaz que outros métodos.
+- Fast:** Faster, lighter and more effective than other methods.
 
-- **Renderização Declarativa:** A Scalbi tem uma renderização declarativa extremamente fácil e eficaz.
+- Declarative rendering:** Scalbi has extremely easy and effective declarative rendering.
 
-- **Mais segura:** O código fonte da sua página fica menos visível e vulnerável.
+- More secure:** Your page's source code is less visible and vulnerable.
 
-## ⚡ Como funciona a CTMFS
-A CTMFS recebe todos arquivos do seu servidor (que devem ser indicados por você) e cria uma rede única que pode carregar seu site todo de forma mais rápida em apenas um diretório/slug.
-Por exemplo, suponhamos que você tenha 3 arquivos, chamados de: "home.html, login.html, about.html" nesse caso, você poderia criar uma instância no Go com a Scalbi indicando esses arquivos e você poderia acessar eles por exemplo assim: "http://localhost:3030/#home", da mesma forma com "#login" e "#about".
-Dessa forma, o seu website/servidor carrega mais rápido e de forma mais flexível e segura.
+## ⚡ How CTMFS works
+CTMFS takes all the files from your server (which you must indicate) and creates a single network that can load your entire site faster in just one directory/slug.
+For example, suppose you have 3 files, called: "home.html, login.html, about.html" in this case, you could create an instance in Go with Scalbi indicating these files and you could access them for example like this: "http://localhost:3030/#home", in the same way with "#login" and "#about".
+This way, your website/server loads faster and in a more flexible and secure way.
