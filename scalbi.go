@@ -62,7 +62,7 @@ func (u URL) Status(url string) string {
 }
 
 // Função para renderizar o HTML com base nos dados passados
-func Scalbi(w http.ResponseWriter, data map[string]string) {
+func Server(w http.ResponseWriter, data map[string]string) {
 	var buf bytes.Buffer
 	err := json.NewEncoder(&buf).Encode(data)
 	if err != nil {
