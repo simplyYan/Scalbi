@@ -61,6 +61,34 @@ func (u URL) Status(url string) string {
 	return "av"
 }
 
+// Estrutura para armazenar dados
+type Scal struct {
+	Data map[string]interface{}
+}
+
+// Função para criar uma nova instância de Scal
+func newScal() *Scal {
+	return &Scal{
+		Data: make(map[string]interface{}),
+	}
+}
+
+// Função para obter um valor de Scal
+func (s *Scal) Get(key string) interface{} {
+	return s.Data[key]
+}
+
+// Função para definir um valor em Scal
+func (s *Scal) Set(key string, value interface{}) {
+	s.Data[key] = value
+}
+
+// Função para renderizar um valor em Scal
+func (s *Scal) Render(key string, value interface{}) string {
+	s.Set(key, value)
+	return fmt.Sprintf("{{ .%s }}", key)
+}
+
 // Função para renderizar o HTML com base nos dados passados
 func (s *Scal) Server(w http.ResponseWriter, data map[string]string) {
 	var buf bytes.Buffer
@@ -94,32 +122,4 @@ func (s *Scal) Server(w http.ResponseWriter, data map[string]string) {
 
 	w.Header().Set("Content-Type", "text/html")
 	w.Write([]byte(templateStr))
-}
-
-// Estrutura para armazenar dados
-type Scal struct {
-	Data map[string]interface{}
-}
-
-// Função para criar uma nova instância de Scal
-func newScal() *Scal {
-	return &Scal{
-		Data: make(map[string]interface{}),
-	}
-}
-
-// Função para obter um valor de Scal
-func (s *Scal) Get(key string) interface{} {
-	return s.Data[key]
-}
-
-// Função para definir um valor em Scal
-func (s *Scal) Set(key string, value interface{}) {
-	s.Data[key] = value
-}
-
-// Função para renderizar um valor em Scal
-func (s *Scal) Render(key string, value interface{}) string {
-	s.Set(key, value)
-	return fmt.Sprintf("{{ .%s }}", key)
 }
