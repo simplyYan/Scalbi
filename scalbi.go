@@ -67,7 +67,7 @@ type Scal struct {
 }
 
 // Função para criar uma nova instância de Scal
-func newScal() *Scal {
+func NewScal() *Scal {
 	return &Scal{
 		Data: make(map[string]interface{}),
 	}
