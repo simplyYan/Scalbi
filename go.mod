@@ -1,3 +1,3 @@
-module scalbi
+module Scalbi
 
 go 1.19
