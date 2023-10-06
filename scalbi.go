@@ -50,7 +50,7 @@ func (u URL) Status(url string) string {
 }
 
 // Função para renderizar o HTML com base nos dados passados
-func scalbi(w http.ResponseWriter, data map[string]string) {
+func Scalbi(w http.ResponseWriter, data map[string]string) {
 	htmlTemplate := `
     <!DOCTYPE html>
     <html lang="en">
