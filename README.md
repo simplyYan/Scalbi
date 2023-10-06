@@ -6,7 +6,7 @@ Scalbi is a library dedicated to monitoring and improving server performance. Sc
 ## 📦 How to install
 To install Scalbi, you can use 'go get', here's how:
 ```bash
-go get https://github.com/simplyYan/Scalbi
+go get -u github.com/simplyYan/Scalbi
 ```
 ### Scalbi's JavaScript API
 To use the full power of Scalbi, you need to add its API to your HTML:
