@@ -11,7 +11,7 @@ go get -u github.com/simplyYan/Scalbi
 ### Scalbi's JavaScript API
 To use the full power of Scalbi, you need to add its API to your HTML:
 ```
-https://cdn.jsdelivr.net/gh/simplyYan/Scalbi@main/javascript.api/scalbi.js
+https://cdn.jsdelivr.net/gh/simplyYan/Scalbi@main/javascript.api/scalbi.mjs
 ```
 
 ## 📖 Documentation
