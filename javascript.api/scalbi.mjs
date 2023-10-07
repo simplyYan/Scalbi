@@ -50,7 +50,7 @@ class Scalbi {
       if (self.iframe && targetURL) {
         self.iframe.src = targetURL;
       }
-    }, 5000); // Verifica a cada 5 segundos
+    }, 2000); // Verifica a cada 5 segundos
   }
 }
 
