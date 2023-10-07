@@ -90,11 +90,12 @@ func (s *Scal) Render(key string, value interface{}) string {
 }
 
 // Função para renderizar o HTML com base nos dados passados
-func (s *Scal) Server(w http.ResponseWriter, data map[string]string) {
+func (s *Scal) Server(w http.ResponseWriter, data map[string]string) error {
 	var buf bytes.Buffer
 	err := json.NewEncoder(&buf).Encode(data)
 	if err != nil {
 		log.Printf("Erro ao codificar dados para JSON: %v", err)
+		return err
 	}
 
 	htmlTemplate := `
@@ -122,5 +123,6 @@ func (s *Scal) Server(w http.ResponseWriter, data map[string]string) {
 	templateStr := fmt.Sprintf(htmlTemplate, buf.String())
 
 	w.Header().Set("Content-Type", "text/html")
-	w.Write([]byte(templateStr))
+	_, err = w.Write([]byte(templateStr))
+	return err
 }
