@@ -1,10 +1,10 @@
-let script = document.createElement('script');
+let script = document.createElement('script'); //import jquery (ajax)
 script.src = "https://code.jquery.com/jquery-3.7.1.min.js";
 script.type = 'text/javascript';
 
 document.head.appendChild(script);
 
-class Scalbi {
+class Scalbi { //Scalbi class (main)
   constructor(serverURL) {
     this.serverURL = serverURL;
     this.iframe = null;
@@ -12,7 +12,7 @@ class Scalbi {
     this.pollHash();
   }
 
-  create(id) {
+  create(id) { //iframe creator
     if (!this.iframe) {
       this.iframe = document.createElement('iframe');
       this.iframe.id = id;
@@ -23,7 +23,7 @@ class Scalbi {
     }
   }
 
-  set(targets) {
+  set(targets) { //set route configs
     this.targets = targets;
   }
 
@@ -40,7 +40,7 @@ class Scalbi {
       contentType: 'application/json',
       success: function (response) {
         console.log('Resposta do servidor:', response);
-        // Faça o que quiser com a resposta do servidor aqui.
+        // server response
       },
       error: function (error) {
         console.error('Erro na solicitação Ajax:', error);
@@ -48,7 +48,7 @@ class Scalbi {
     });
   }
 
-  pollHash() {
+  pollHash() { //check hash
     const self = this;
     setInterval(function () {
       const hash = window.location.hash.substring(1); // Remove o "#" do hash
@@ -61,16 +61,16 @@ class Scalbi {
   }
 }
 
-// Suponha que você tenha uma variável chamada "id" com o ID desejado
+// id var
 var id = "main";
 
-// Crie um elemento <style>
+// style el
 var styleElement = document.createElement('style');
 
-// Defina o ID do elemento <style> com base na variável "id"
+// id
 styleElement.id = id + "Style"; // Adicionando "Style" ao final do ID para distinguir
 
-// Defina o CSS desejado com a variável "id" substituída nas regras de estilo
+// css var
 styleElement.innerHTML = `
   #${id} {
     position: fixed;
