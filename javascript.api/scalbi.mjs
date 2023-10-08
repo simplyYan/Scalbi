@@ -60,3 +60,29 @@ class Scalbi {
     }, 2000); // Verifica a cada 2 segundos
   }
 }
+
+// Suponha que você tenha uma variável chamada "id" com o ID desejado
+var id = "main";
+
+// Crie um elemento <style>
+var styleElement = document.createElement('style');
+
+// Defina o ID do elemento <style> com base na variável "id"
+styleElement.id = id + "Style"; // Adicionando "Style" ao final do ID para distinguir
+
+// Defina o CSS desejado com a variável "id" substituída nas regras de estilo
+styleElement.innerHTML = `
+  #${id} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none; /* Opcional: remover a borda padrão */
+  }
+`;
+
+// Adicione o elemento <style> ao cabeçalho da página
+document.head.appendChild(styleElement);
