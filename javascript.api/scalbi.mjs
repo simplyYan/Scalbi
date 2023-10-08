@@ -29,7 +29,7 @@ class Scalbi { //Scalbi class (main)
 
   send(method, data) {
     if (!this.serverURL) {
-      console.error('URL do servidor não definido. Não é possível enviar solicitações Ajax.');
+      console.error('Server URL not defined. It is not possible to send Ajax requests.');
       return;
     }
 
