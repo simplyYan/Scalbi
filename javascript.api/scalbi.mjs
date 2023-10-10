@@ -1,18 +1,20 @@
-let script = document.createElement('script'); //import jquery (ajax)
+let script = document.createElement('script'); //Import JQuery (Ajax)
 script.src = "https://code.jquery.com/jquery-3.7.1.min.js";
 script.type = 'text/javascript';
 
 document.head.appendChild(script);
 
-class Scalbi { //Scalbi class (main)
+class Scalbi { //Main class
   constructor(serverURL) {
     this.serverURL = serverURL;
     this.iframe = null;
     this.targets = {};
-    this.pollHash();
+    // hashchange event (better perfomance)
+    window.addEventListener('hashchange', this.handleHashChange.bind(this));
   }
 
-  create(id) { //iframe creator
+
+  create(id) {
     if (!this.iframe) {
       this.iframe = document.createElement('iframe');
       this.iframe.id = id;
@@ -23,13 +25,13 @@ class Scalbi { //Scalbi class (main)
     }
   }
 
-  set(targets) { //set route configs
+  set(targets) {
     this.targets = targets;
   }
 
   send(method, data) {
     if (!this.serverURL) {
-      console.error('Server URL not defined. It is not possible to send Ajax requests.');
+      console.error('URL do servidor não definido. Não é possível enviar solicitações Ajax.');
       return;
     }
 
@@ -40,7 +42,7 @@ class Scalbi { //Scalbi class (main)
       contentType: 'application/json',
       success: function (response) {
         console.log('Resposta do servidor:', response);
-        // server response
+        // Server response action
       },
       error: function (error) {
         console.error('Erro na solicitação Ajax:', error);
@@ -48,41 +50,12 @@ class Scalbi { //Scalbi class (main)
     });
   }
 
-  pollHash() { //check hash
-    const self = this;
-    setInterval(function () {
-      const hash = window.location.hash.substring(1); // Remove o "#" do hash
-      const targetURL = self.targets[hash];
-      if (self.iframe && targetURL && self.iframe.src !== targetURL) {
-        history.replaceState(null, null, '#' + hash);
-        self.iframe.src = targetURL;
-      }
-    }, 2000); // Verifica a cada 2 segundos
+  handleHashChange() {
+    const hash = window.location.hash.substring(1); // Remove "#" from hash
+    const targetURL = this.targets[hash];
+    if (this.iframe && targetURL && this.iframe.src !== targetURL) {
+      history.replaceState(null, null, '#' + hash);
+      this.iframe.src = targetURL;
+    }
   }
 }
-
-// id var
-var id = "main";
-
-// style el
-var styleElement = document.createElement('style');
-
-// id
-styleElement.id = id + "Style"; // Adicionando "Style" ao final do ID para distinguir
-
-// css var
-styleElement.innerHTML = `
-  #${id} {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    border: none; /* Opcional: remover a borda padrão */
-  }
-`;
-
-// Adicione o elemento <style> ao cabeçalho da página
-document.head.appendChild(styleElement);
