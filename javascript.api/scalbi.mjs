@@ -14,7 +14,7 @@ class Scalbi { //Main class
   }
 
 
-  create(id) {
+  create(id) { //create iframe
     if (!this.iframe) {
       this.iframe = document.createElement('iframe');
       this.iframe.id = id;
@@ -25,13 +25,13 @@ class Scalbi { //Main class
     }
   }
 
-  set(targets) {
+  set(targets) { //set route config
     this.targets = targets;
   }
 
   send(method, data) {
     if (!this.serverURL) {
-      console.error('URL do servidor não definido. Não é possível enviar solicitações Ajax.');
+      console.error('Server URL not defined. It is not possible to send Ajax requests.');
       return;
     }
 
@@ -59,3 +59,30 @@ class Scalbi { //Main class
     }
   }
 }
+
+
+// id var
+var id = "main";
+
+// style el
+var styleElement = document.createElement('style');
+
+// id
+styleElement.id = id + "Style"; // Adicionando "Style" ao final do ID para distinguir
+
+// css var
+styleElement.innerHTML = `
+  #${id} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none; /* Opcional: remover a borda padrão */
+  }
+`;
+
+// Add <style> element (head)
+document.head.appendChild(styleElement);
