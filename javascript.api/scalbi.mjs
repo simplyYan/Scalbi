@@ -9,7 +9,7 @@ class Scalbi { //Main class
     this.serverURL = serverURL;
     this.iframe = null;
     this.targets = {};
-    // hashchange event (better perfomance)
+    // add hashchange listener
     window.addEventListener('hashchange', this.handleHashChange.bind(this));
   }
 
@@ -50,16 +50,17 @@ class Scalbi { //Main class
     });
   }
 
-  handleHashChange() {
+  handleHashChange() { //check hash
     const hash = window.location.hash.substring(1); // Remove "#" from hash
     const targetURL = this.targets[hash];
-    if (this.iframe && targetURL && this.iframe.src !== targetURL) {
-      history.replaceState(null, null, '#' + hash);
-      this.iframe.src = targetURL;
+    if (this.iframe && targetURL) {
+      if (this.iframe.src !== targetURL) {
+        history.replaceState(null, null, '#' + hash);
+        this.iframe.src = targetURL;
+      }
     }
   }
 }
-
 
 // id var
 var id = "main";
@@ -68,7 +69,7 @@ var id = "main";
 var styleElement = document.createElement('style');
 
 // id
-styleElement.id = id + "Style"; // Adicionando "Style" ao final do ID para distinguir
+styleElement.id = id + "Style"; // add id and style cfg
 
 // css var
 styleElement.innerHTML = `
